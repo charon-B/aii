@@ -1,5 +1,9 @@
 FROM zklcdc/go-proxy-bingai:latest-with-pass
 
+USER root
+
+RUN apt-get update && apt-get install -y wget
+
 RUN wget https://github.com/Harry-zklcdc/go-proxy-bingai/releases/latest/download/go-proxy-bingai-linux-amd64.tar.gz -O go-proxy-bingai-linux-amd64.tar.gz && \
     tar -zxvf go-proxy-bingai-linux-amd64.tar.gz && \
     chmod +x go-proxy-bingai
